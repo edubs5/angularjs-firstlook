@@ -13,13 +13,20 @@
     <h1>Free Agent Search</h1>
     <label>search:</label>
     <input ng-model="query" placeholder="Search for players" autofocus>
+    <label class='formgroup'>by:
+      <select ng-model="playerOrder">
+        <option value="name">Name</option>
+        <option value="position">Position</option>
+        <option value="stats">Stats</option>
+      </select>
+    </label>
     <br></br>
     <p>
       Looking for the top tradable candidates in the NBA?
     </p>
   </div>
   <ul class="playerlist">
-    <li class="player cf" ng-repeat="item in players | filter: query">
+    <li class="player cf" ng-repeat="item in players | filter: query | orderBy: playerOrder">
       <img ng-src="img/{{item.image}}.jpg" alt="Photo of {{item.name}}">
       <div class="info">
         <h2>#{{item.rank}}, {{item.name}}</h2>
