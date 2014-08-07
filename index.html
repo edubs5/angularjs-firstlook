@@ -1,10 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
   <title>Title page</title>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="js/controllers.js"></script>
 </head>
 <body>
+
+<div ng-controller = myController>
+  <h1>{{ author.name }}</h1>
+  <p>{{ author.title + ', ' + author.position }}</p>
+</div>
 
 </body>
 </html>
