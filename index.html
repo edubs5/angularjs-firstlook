@@ -11,6 +11,9 @@
 <div class="main" ng-controller = "myController">
   <div class="search">
     <h1>Free Agent Search</h1>
+    <p>
+      Looking for the top tradable candidates in the NBA?
+    </p>
     <label>search:</label>
     <input ng-model="query" placeholder="Search for players" autofocus>
     <label class='formgroup'>by:
@@ -20,10 +23,6 @@
         <option value="stats">Stats</option>
       </select>
     </label>
-    <br></br>
-    <p>
-      Looking for the top tradable candidates in the NBA?
-    </p>
   </div>
   <ul class="playerlist">
     <li class="player cf" ng-repeat="item in players | filter: query | orderBy: playerOrder">
