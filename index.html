@@ -23,9 +23,17 @@
         <option value="stats">Stats</option>
       </select>
     </label>
+    <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" checked>
+      ascending
+    </label>
+    <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" value="reverse">
+      descending
+    </label>
   </div>
   <ul class="playerlist">
-    <li class="player cf" ng-repeat="item in players | filter: query | orderBy: playerOrder">
+    <li class="player cf" ng-repeat="item in players | filter: query | orderBy: playerOrder:direction">
       <img ng-src="img/{{item.image}}.jpg" alt="Photo of {{item.name}}">
       <div class="info">
         <h2>#{{item.rank}}, {{item.name}}</h2>
