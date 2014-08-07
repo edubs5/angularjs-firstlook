@@ -2,16 +2,20 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
-  <title>Title page</title>
+  <title>Top 2014 Free Agents</title>
   <script src="lib/angular/angular.min.js"></script>
   <script src="js/controllers.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <div class="main" ng-controller = "myController">
+  <div class="search">
+    <h1>Free Agent Search</h1>
+    <label>search:</label>
+    <input ng-model="query" placeholder="Search for players" autofocus>
+  </div>
   <ul class="playerlist">
-    <li class="player cf" ng-repeat="item in players">
+    <li class="player cf" ng-repeat="item in players | filter: query">
       <img ng-src="img/{{item.image}}.jpg" alt="Photo of {{item.name}}">
       <div class="info">
         <h2>#{{item.rank}}, {{item.name}}</h2>
