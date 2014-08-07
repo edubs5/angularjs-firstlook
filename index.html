@@ -5,12 +5,24 @@
   <title>Title page</title>
   <script src="lib/angular/angular.min.js"></script>
   <script src="js/controllers.js"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div ng-controller = myController>
-  <h1>{{ author.name }}</h1>
-  <p>{{ author.title + ', ' + author.position }}</p>
+<div class="main" ng-controller = "myController">
+  <ul class="playerlist">
+    <li class="player cf" ng-repeat="item in players">
+      <img ng-src="img/{{item.image}}.jpg" alt="Photo of {{item.name}}">
+      <div class="info">
+        <h2>#{{item.rank}}, {{item.name}}</h2>
+        <h3>{{item.team}}</h3>
+        <h3>Position: {{item.position}}</h3>
+        <h3>Age: {{item.age}}</h3>
+        <h3>2013-14 stats:</h3>
+        <h3>{{item.stats}}</h3>
+      </div>
+    </li>
+  </ul>
 </div>
 
 </body>
