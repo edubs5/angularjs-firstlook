@@ -1,0 +1,13 @@
+<section class="playerinfo">
+  <div class="player cf" ng-model="players">
+    <h1>{{players[whichItem].name}}</h1>
+    <div class="info">
+      <h3>{{players[whichItem].team}}</h3>
+      <img ng-src="img/{{players[whichItem].image}}.jpg" alt="Photo of {{players[whichItem].name}}">
+      <div class="position">Position: {{players[whichItem].position}}</div>
+      <div class="age">Age: {{players[whichItem].age}}</div>
+      <div class="stats">2013-14 Stats: {{players[whichItem].stats}}</div>
+    </div>
+  </div>
+  <a href="index.html">Back to search</a>
+</section>

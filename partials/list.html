@@ -23,14 +23,12 @@
 </div>
 <ul class="playerlist">
   <li class="player cf" ng-repeat="item in players | filter: query | orderBy: playerOrder:direction">
+    <a href="#/details/{{players.indexOf(item)}}">
     <img ng-src="img/{{item.image}}.jpg" alt="Photo of {{item.name}}">
     <div class="info">
       <h2>#{{item.rank}}, {{item.name}}</h2>
       <h3>{{item.team}}</h3>
-      <h3>Position: {{item.position}}</h3>
-      <h3>Age: {{item.age}}</h3>
-      <h3>2013-14 stats:</h3>
-      <h3>{{item.stats}}</h3>
     </div>
+    </a>
   </li>
 </ul>
