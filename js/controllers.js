@@ -11,5 +11,17 @@ playerControllers.controller('DetailsController', ['$scope', '$http', '$routePar
   $http.get('js/data.json').success(function(data) {
     $scope.players = data;
     $scope.whichItem = $routeParams.itemId;
+
+  if ($routeParams.itemId > 0) {
+    $scope.prevItem = Number($routeParams.itemId)-1;
+  } else {
+    $scope.prevItem = $scope.players.length-1;
+  }
+
+  if ($routeParams.itemId < $scope.players.length-1) {
+    $scope.nextItem = Number($routeParams.itemId)+1;
+  } else {
+    $scope.nextItem = 0;
+  }
   });
 }]);

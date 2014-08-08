@@ -1,5 +1,7 @@
 <section class="playerinfo">
   <div class="player cf" ng-model="players">
+    <a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a>
+    <a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a>
     <h1>{{players[whichItem].name}}</h1>
     <div class="info">
       <h3>{{players[whichItem].team}}</h3>
