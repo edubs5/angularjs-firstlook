@@ -1,6 +1,6 @@
-var myApp = angular.module('myApp', []);
+var playerControllers = angular.module('playerControllers', []);
 
-myApp.controller('myController', ['$scope', '$http', function($scope, $http) {
+playerControllers.controller('ListController', ['$scope', '$http', function($scope, $http) {
   $http.get('js/data.json').success(function(data) {
     $scope.players = data;
     $scope.playerOrder = "rank";

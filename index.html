@@ -5,48 +5,11 @@
   <title>Top 2014 Free Agents</title>
   <script src="lib/angular/angular.min.js"></script>
   <script src="lib/angular/angular-route.min.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="main" ng-controller = "myController">
-  <div class="search">
-    <h1>Free Agent Search</h1>
-    <p>
-      Looking for the top tradable candidates in the NBA?
-    </p>
-    <label>search:</label>
-    <input ng-model="query" placeholder="Search for players" autofocus>
-    <label class='formgroup'>by:
-      <select ng-model="playerOrder">
-        <option value="rank">Rank</option>
-        <option value="name">Name</option>
-        <option value="position">Position</option>
-      </select>
-    </label>
-    <label class="formgroup">
-      <input type="radio" ng-model="direction" name="direction" checked>
-      ascending
-    </label>
-    <label class="formgroup">
-      <input type="radio" ng-model="direction" name="direction" value="reverse">
-      descending
-    </label>
-  </div>
-  <ul class="playerlist">
-    <li class="player cf" ng-repeat="item in players | filter: query | orderBy: playerOrder:direction">
-      <img ng-src="img/{{item.image}}.jpg" alt="Photo of {{item.name}}">
-      <div class="info">
-        <h2>#{{item.rank}}, {{item.name}}</h2>
-        <h3>{{item.team}}</h3>
-        <h3>Position: {{item.position}}</h3>
-        <h3>Age: {{item.age}}</h3>
-        <h3>2013-14 stats:</h3>
-        <h3>{{item.stats}}</h3>
-      </div>
-    </li>
-  </ul>
-</div>
-
+<div class="main" ng-view></div>
 </body>
 </html>
